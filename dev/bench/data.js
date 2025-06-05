@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1749125853082,
+  "lastUpdate": 1749125989528,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -39,6 +39,37 @@ window.BENCHMARK_DATA = {
             "name": "ant files download",
             "value": 32.551795859988395,
             "unit": "MiB/s"
+          }
+        ]
+      }
+    ],
+    "Node memory": [
+      {
+        "commit": {
+          "author": {
+            "email": "36204420+vphongph@users.noreply.github.com",
+            "name": "vphongph",
+            "username": "vphongph"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b5dbfa4568e56b84035f1a1c0889722a36ffa38e",
+          "message": "Merge pull request #2991 from mickvandijke/example-network-from-code\n\nchore: add a network spawner example",
+          "timestamp": "2025-06-05T06:57:54Z",
+          "tree_id": "1ce560c1ae4792eecbd57b02101e7a0a471e1a6d",
+          "url": "https://github.com/jacderida/autonomi/commit/b5dbfa4568e56b84035f1a1c0889722a36ffa38e"
+        },
+        "date": 1749125989119,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory w/ `safe` benchmarks",
+            "value": 88,
+            "unit": "MB"
           }
         ]
       }
