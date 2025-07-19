@@ -422,7 +422,7 @@ impl Client {
                     }
                     Err(err) => {
                         #[cfg(feature = "loud")]
-                        println!("Error fetching chunk {idx}/{total_chunks}: {err:?}");
+                        println!("Error fetching chunk {idx} ({chunk_addr:?}): {err:?}");
                         error!(
                             "Error fetching chunk {idx}/{total_chunks}({chunk_addr:?}): {err:?}"
                         );
