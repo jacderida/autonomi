@@ -164,6 +164,7 @@ impl NetworkDriver {
             .set_replication_factor(REPLICATION_FACTOR)
             .set_query_timeout(KAD_QUERY_TIMEOUT)
             .set_periodic_bootstrap_interval(None)
+            .disjoint_query_paths(true)
             // Extend outbound_substreams timeout to allow client with poor connection
             // still able to upload large sized record with higher success rate.
             .set_substreams_timeout(CLIENT_SUBSTREAMS_TIMEOUT_S);
