@@ -11,7 +11,7 @@ use crate::networking::{
     craft_valid_multiaddr_without_p2p,
     error::{dial_error_to_str, listen_error_to_str},
     interface::TerminateNodeReason,
-    multiaddr_is_global, NetworkEvent, NodeIssue, Result,
+    NetworkEvent, NodeIssue, Result,
 };
 use itertools::Itertools;
 #[cfg(feature = "open-metrics")]
@@ -170,34 +170,23 @@ impl SwarmDriver {
                 }
 
                 if !self.is_relay_client {
-                    if self.local {
-                        // all addresses are effectively external here...
-                        // this is needed for Kad Mode::Server
-                        self.swarm.add_external_address(address.clone());
-
-                        // If we are local, add our own address(es) to cache
-                        if let Some(bootstrap_cache) = self.bootstrap_cache.as_mut() {
-                            info!("Adding listen address to bootstrap cache (local): {address:?}");
-                            bootstrap_cache.add_addr(address.clone());
-                        }
-                        if let Err(err) = self.sync_and_flush_cache() {
-                            warn!("Failed to sync and flush cache during NewListenAddr: {err:?}");
-                        }
+                    if let Some(mut crafted_address) = craft_valid_multiaddr_without_p2p(&address) {
+                        crafted_address.push(Protocol::P2p(self.self_peer_id));
+                        info!("Adding listen address to external addresses: {crafted_address:?}");
+                        self.swarm.add_external_address(crafted_address);
                     } else {
-                        // only add our global addresses
-                        if multiaddr_is_global(&address) {
-                            if let Some(mut crafted_address) =
-                                craft_valid_multiaddr_without_p2p(&address)
-                            {
-                                crafted_address.push(Protocol::P2p(self.self_peer_id));
-                                info!("Adding listen address to external addresses: {crafted_address:?}");
-                                self.swarm.add_external_address(crafted_address);
-                            } else {
-                                error!("Listen address is ill formed {address:?}");
-                            }
-                        } else {
-                            warn!("Listen address is not global, ignoring: {address:?}");
-                        };
+                        error!("Listen address is ill formed {address:?}");
+                    }
+                }
+
+                if self.local {
+                    // If we are local, add our own address(es) to cache
+                    if let Some(bootstrap_cache) = self.bootstrap_cache.as_mut() {
+                        info!("Adding listen address to bootstrap cache (local): {address:?}");
+                        bootstrap_cache.add_addr(address.clone());
+                    }
+                    if let Err(err) = self.sync_and_flush_cache() {
+                        warn!("Failed to sync and flush cache during NewListenAddr: {err:?}");
                     }
                 }
 
