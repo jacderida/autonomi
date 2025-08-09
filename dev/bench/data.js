@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1754758430057,
+  "lastUpdate": 1754758431162,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -384,6 +384,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "swarm_driver long handling total_time",
             "value": 11498,
+            "unit": "ms"
+          },
+          {
+            "name": "swarm_driver average long handling time",
+            "value": 2,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b32ac621dd170ef681d4c68d7bf521931613ee67",
+          "message": "Merge pull request #3154 from grumbach/uploads_using_streaming\n\nfeat(client): implement streaming downloads for file_download and fil…",
+          "timestamp": "2025-08-08T13:26:23Z",
+          "tree_id": "21fb6225af9aad10bff49c54883f3317b5379f84",
+          "url": "https://github.com/jacderida/autonomi/commit/b32ac621dd170ef681d4c68d7bf521931613ee67"
+        },
+        "date": 1754758430890,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "swarm_driver long handling times",
+            "value": 12283,
+            "unit": "hits"
+          },
+          {
+            "name": "swarm_driver long handling total_time",
+            "value": 25576,
             "unit": "ms"
           },
           {
