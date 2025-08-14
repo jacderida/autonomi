@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1755208610373,
+  "lastUpdate": 1755208684425,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -244,6 +244,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Peak memory w/ `safe` benchmarks",
             "value": 89,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "39eb71ffd9b5b8938721e3a0a5f4146d22dda565",
+          "message": "Merge pull request #3162 from maqi/streaming_upload_tryout\n\nusing stream_encryption during CI",
+          "timestamp": "2025-08-14T21:32:54+01:00",
+          "tree_id": "70aa478f412380102558356bb35b8922c175a1d4",
+          "url": "https://github.com/jacderida/autonomi/commit/39eb71ffd9b5b8938721e3a0a5f4146d22dda565"
+        },
+        "date": 1755208684148,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory w/ `safe` benchmarks",
+            "value": 88,
             "unit": "MB"
           }
         ]
