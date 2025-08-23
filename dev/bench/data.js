@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1755960234613,
+  "lastUpdate": 1755960236081,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -1089,6 +1089,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "swarm_driver long handling total_time",
             "value": 22277,
+            "unit": "ms"
+          },
+          {
+            "name": "swarm_driver average long handling time",
+            "value": 2,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chris.oneil@gmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "19fe1cd5d2d5041fc474c41b122491d45c591fc9",
+          "message": "Merge pull request #3165 from jacderida/ci-increase_file_test_coverage\n\nci: provide tests for covering all file types",
+          "timestamp": "2025-08-23T11:08:44Z",
+          "tree_id": "01dfbfe312dc66c9d7b59c888576ff72e03094d2",
+          "url": "https://github.com/jacderida/autonomi/commit/19fe1cd5d2d5041fc474c41b122491d45c591fc9"
+        },
+        "date": 1755960235596,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "swarm_driver long handling times",
+            "value": 11710,
+            "unit": "hits"
+          },
+          {
+            "name": "swarm_driver long handling total_time",
+            "value": 24952,
             "unit": "ms"
           },
           {
