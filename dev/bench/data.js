@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756419100428,
+  "lastUpdate": 1756818847878,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -350,6 +350,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 26.5084674492711,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "90bf48b1473a02fef6d690fddab5d27455d542d6",
+          "message": "Merge pull request #3160 from vphongph/docs-update-examples\n\ndocs: added scratchpad examples from docs and removed outdated examples",
+          "timestamp": "2025-09-02T11:00:07Z",
+          "tree_id": "9a0c838d9387787e7c0507da16c3550f143c605c",
+          "url": "https://github.com/jacderida/autonomi/commit/90bf48b1473a02fef6d690fddab5d27455d542d6"
+        },
+        "date": 1756818846840,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 2.6921539293665226,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 8.984853431301625,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 26.2866610022931,
             "unit": "MiB/s"
           }
         ]
