@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1756818928621,
+  "lastUpdate": 1756818930512,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -984,6 +984,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "Peak memory usage w/ upload",
             "value": 20,
+            "unit": "MB"
+          },
+          {
+            "name": "Average memory usage w/ upload",
+            "value": 15,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "90bf48b1473a02fef6d690fddab5d27455d542d6",
+          "message": "Merge pull request #3160 from vphongph/docs-update-examples\n\ndocs: added scratchpad examples from docs and removed outdated examples",
+          "timestamp": "2025-09-02T11:00:07Z",
+          "tree_id": "9a0c838d9387787e7c0507da16c3550f143c605c",
+          "url": "https://github.com/jacderida/autonomi/commit/90bf48b1473a02fef6d690fddab5d27455d542d6"
+        },
+        "date": 1756818929795,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory usage w/ upload",
+            "value": 19,
             "unit": "MB"
           },
           {
