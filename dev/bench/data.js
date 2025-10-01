@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759171059813,
+  "lastUpdate": 1759350226081,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -506,6 +506,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 22.27313633552984,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "42e4500a3bc4f9531e686a2890abb6e61b26c149",
+          "message": "Merge pull request #3226 from maidsafe/chore-alloy_publish_issue\n\nchore: bump `evmlib` to `0.4.4`",
+          "timestamp": "2025-10-01T17:21:22+01:00",
+          "tree_id": "545682b99c70573f11874ee52a83afe9e090f1cc",
+          "url": "https://github.com/jacderida/autonomi/commit/42e4500a3bc4f9531e686a2890abb6e61b26c149"
+        },
+        "date": 1759350225577,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 2.282755616073974,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 9.161755405871343,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 22.17634636548955,
             "unit": "MiB/s"
           }
         ]
