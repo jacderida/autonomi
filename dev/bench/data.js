@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1759350304660,
+  "lastUpdate": 1759501604655,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -545,6 +545,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 22.17634636548955,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "8ae89414911d9ca9007df1d0ffd33a24576c224e",
+          "message": "Merge pull request #3229 from jacderida/chore-remove_nightly_workflows\n\nchore: remove various nightly workflows",
+          "timestamp": "2025-10-02T21:51:41+01:00",
+          "tree_id": "0a5b9dc89a5345c509cb689534687d0900c6c71a",
+          "url": "https://github.com/jacderida/autonomi/commit/8ae89414911d9ca9007df1d0ffd33a24576c224e"
+        },
+        "date": 1759501604184,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 2.268976085435644,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 8.901799589393963,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 22.149070262687193,
             "unit": "MiB/s"
           }
         ]
