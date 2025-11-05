@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1762301714014,
+  "lastUpdate": 1762301715767,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -1596,6 +1596,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "Peak memory usage w/ upload",
             "value": 19,
+            "unit": "MB"
+          },
+          {
+            "name": "Average memory usage w/ upload",
+            "value": 14,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "5e42bfe0fe8972f519eb1762c80f613d3042aeae",
+          "message": "Merge pull request #3283 from maqi/transformed_json\n\nfeat(ant): analyze output flatten json as well",
+          "timestamp": "2025-10-31T22:59:13Z",
+          "tree_id": "0db903418adc1fb8cf3f1ea99b46c381c671fce9",
+          "url": "https://github.com/jacderida/autonomi/commit/5e42bfe0fe8972f519eb1762c80f613d3042aeae"
+        },
+        "date": 1762301715096,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory usage w/ upload",
+            "value": 15,
             "unit": "MB"
           },
           {
