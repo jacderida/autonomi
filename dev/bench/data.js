@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763767972454,
+  "lastUpdate": 1763768057872,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -1332,6 +1332,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Peak memory w/ `safe` benchmarks",
             "value": 201,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cb56629bee1598c22735fbad44af3e0d957303b9",
+          "message": "Merge pull request #3313 from maqi/remove_upload_fallback_approach\n\nfix(client): remove upload fallback approach",
+          "timestamp": "2025-11-20T16:31:59Z",
+          "tree_id": "5e4c79ae61d01e96e7946d9a665bc027304d2ee0",
+          "url": "https://github.com/jacderida/autonomi/commit/cb56629bee1598c22735fbad44af3e0d957303b9"
+        },
+        "date": 1763768057243,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory w/ `safe` benchmarks",
+            "value": 202,
             "unit": "MB"
           }
         ]
