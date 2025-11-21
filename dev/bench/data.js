@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1763768059554,
+  "lastUpdate": 1763768061265,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -2781,6 +2781,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "swarm_driver long handling total_time",
             "value": 21381,
+            "unit": "ms"
+          },
+          {
+            "name": "swarm_driver average long handling time",
+            "value": 1,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "cb56629bee1598c22735fbad44af3e0d957303b9",
+          "message": "Merge pull request #3313 from maqi/remove_upload_fallback_approach\n\nfix(client): remove upload fallback approach",
+          "timestamp": "2025-11-20T16:31:59Z",
+          "tree_id": "5e4c79ae61d01e96e7946d9a665bc027304d2ee0",
+          "url": "https://github.com/jacderida/autonomi/commit/cb56629bee1598c22735fbad44af3e0d957303b9"
+        },
+        "date": 1763768060596,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "swarm_driver long handling times",
+            "value": 6555,
+            "unit": "hits"
+          },
+          {
+            "name": "swarm_driver long handling total_time",
+            "value": 12215,
             "unit": "ms"
           },
           {
