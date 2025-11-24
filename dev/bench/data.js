@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764006783809,
+  "lastUpdate": 1764006785631,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -2922,6 +2922,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "swarm_driver long handling total_time",
             "value": 12215,
+            "unit": "ms"
+          },
+          {
+            "name": "swarm_driver average long handling time",
+            "value": 1,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b762a2e7aa97a7ba1a6c0bb637937578aa30377b",
+          "message": "Merge pull request #3316 from jacderida/chore-new_clippy_fixes\n\nchore: upgrade `assert_cmd` reference",
+          "timestamp": "2025-11-24T09:47:13Z",
+          "tree_id": "15379df4172a3270c7e0cfb4b6fa6eb14d765245",
+          "url": "https://github.com/jacderida/autonomi/commit/b762a2e7aa97a7ba1a6c0bb637937578aa30377b"
+        },
+        "date": 1764006784988,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "swarm_driver long handling times",
+            "value": 10993,
+            "unit": "hits"
+          },
+          {
+            "name": "swarm_driver long handling total_time",
+            "value": 20529,
             "unit": "ms"
           },
           {
