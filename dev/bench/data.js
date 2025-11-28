@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764279062343,
+  "lastUpdate": 1764356296056,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -935,6 +935,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 6.6657424031870836,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "dfc9800a4dae391893b1f0488f9cc6e0b4a35c21",
+          "message": "Merge pull request #3328 from maidsafe/fix-bump_autonomi\n\nBump Crates",
+          "timestamp": "2025-11-27T23:31:23Z",
+          "tree_id": "ef0299a82fc77817879e4c28feab2f7a4ba7dcc6",
+          "url": "https://github.com/jacderida/autonomi/commit/dfc9800a4dae391893b1f0488f9cc6e0b4a35c21"
+        },
+        "date": 1764356295395,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 1.1054175250682594,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 6.022039089750555,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 7.006672901328753,
             "unit": "MiB/s"
           }
         ]
