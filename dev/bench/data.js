@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1764358851141,
+  "lastUpdate": 1764358852869,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -3627,6 +3627,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "swarm_driver long handling total_time",
             "value": 20910,
+            "unit": "ms"
+          },
+          {
+            "name": "swarm_driver average long handling time",
+            "value": 1,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "97af816ddac226a91d9b204677408264bdbedfb8",
+          "message": "Merge pull request #3332 from jacderida/chore-python_publish_fixes\n\nfix(ci): Rewrite Python publish workflow following maturin best practices",
+          "timestamp": "2025-11-28T19:24:09Z",
+          "tree_id": "df5a19b50d2e7a281902c66a86998d14f46857e7",
+          "url": "https://github.com/jacderida/autonomi/commit/97af816ddac226a91d9b204677408264bdbedfb8"
+        },
+        "date": 1764358852189,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "swarm_driver long handling times",
+            "value": 9521,
+            "unit": "hits"
+          },
+          {
+            "name": "swarm_driver long handling total_time",
+            "value": 17384,
             "unit": "ms"
           },
           {
