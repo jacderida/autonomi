@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1765741727860,
+  "lastUpdate": 1766011807866,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -1052,6 +1052,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 6.6529198032894445,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "657fa976183f04a808cf08d3beb1553a44f24a29",
+          "message": "Merge pull request #3373 from maqi/make_get_storage_proofs_from_peer_return_PaymentQuote_for_release\n\nchore(client): make get_storage_proofs_from_peer return PaymentQuote",
+          "timestamp": "2025-12-17T16:05:29Z",
+          "tree_id": "46d2986dffb96061b7220ca0ceb575f96473dfd7",
+          "url": "https://github.com/jacderida/autonomi/commit/657fa976183f04a808cf08d3beb1553a44f24a29"
+        },
+        "date": 1766011807168,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 1.077877095841727,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 5.9469555105321055,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 6.953383487001881,
             "unit": "MiB/s"
           }
         ]
