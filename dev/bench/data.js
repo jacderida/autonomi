@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1766011895818,
+  "lastUpdate": 1766011897087,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -2815,6 +2815,40 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/jacderida/autonomi/commit/c15af5a0ed3e0923beea90fe4d77e23f9c10ea54"
         },
         "date": 1765741726190,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory usage w/ upload",
+            "value": 15,
+            "unit": "MB"
+          },
+          {
+            "name": "Average memory usage w/ upload",
+            "value": 14,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "657fa976183f04a808cf08d3beb1553a44f24a29",
+          "message": "Merge pull request #3373 from maqi/make_get_storage_proofs_from_peer_return_PaymentQuote_for_release\n\nchore(client): make get_storage_proofs_from_peer return PaymentQuote",
+          "timestamp": "2025-12-17T16:05:29Z",
+          "tree_id": "46d2986dffb96061b7220ca0ceb575f96473dfd7",
+          "url": "https://github.com/jacderida/autonomi/commit/657fa976183f04a808cf08d3beb1553a44f24a29"
+        },
+        "date": 1766011896699,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
