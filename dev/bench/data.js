@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1766943211894,
+  "lastUpdate": 1767711813990,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -1130,6 +1130,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 6.63043993758821,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2822430d8c752a7684fb2700745917d38b7f9563",
+          "message": "Merge pull request #3391 from maqi/remove_peer_when_failed_to_fetch_version\n\nfeat(node): remove peer when failed to fetch version",
+          "timestamp": "2026-01-05T13:01:01Z",
+          "tree_id": "e1cde438f620b4e84a9ae6d489caf433002d3270",
+          "url": "https://github.com/jacderida/autonomi/commit/2822430d8c752a7684fb2700745917d38b7f9563"
+        },
+        "date": 1767711813287,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 1.0893379219494286,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 5.871100694537198,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 6.922835895096657,
             "unit": "MiB/s"
           }
         ]
