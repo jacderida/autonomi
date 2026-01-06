@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1767711813990,
+  "lastUpdate": 1767711912521,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -2012,6 +2012,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Peak memory w/ `safe` benchmarks",
             "value": 190,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "2822430d8c752a7684fb2700745917d38b7f9563",
+          "message": "Merge pull request #3391 from maqi/remove_peer_when_failed_to_fetch_version\n\nfeat(node): remove peer when failed to fetch version",
+          "timestamp": "2026-01-05T13:01:01Z",
+          "tree_id": "e1cde438f620b4e84a9ae6d489caf433002d3270",
+          "url": "https://github.com/jacderida/autonomi/commit/2822430d8c752a7684fb2700745917d38b7f9563"
+        },
+        "date": 1767711912148,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory w/ `safe` benchmarks",
+            "value": 214,
             "unit": "MB"
           }
         ]
