@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1767711915104,
+  "lastUpdate": 1767795921485,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -1169,6 +1169,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 6.922835895096657,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "1a4f46658ee2ec941e21d68baa6a90fe6e4318c4",
+          "message": "Merge pull request #3376 from mickvandijke/feat-analytical-tools\n\nfeat: add developer query `closest-peers`",
+          "timestamp": "2026-01-07T13:10:23Z",
+          "tree_id": "a378e2fe33a70f13be8d887cc3d47c7a4f950e9b",
+          "url": "https://github.com/jacderida/autonomi/commit/1a4f46658ee2ec941e21d68baa6a90fe6e4318c4"
+        },
+        "date": 1767795920619,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 1.0378615264111934,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 5.796894395633314,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 6.60725292508234,
             "unit": "MiB/s"
           }
         ]
