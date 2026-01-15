@@ -261,6 +261,7 @@ fn main() -> Result<()> {
         .read()
         .expect("Failed to obtain read lock for IDENTIFY_PROTOCOL_STR");
     if opt.version {
+        println!("Welcome to antnode");
         println!(
             "{}",
             ant_build_info::version_string(
