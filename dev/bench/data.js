@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1769094580312,
+  "lastUpdate": 1769094581699,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -4619,6 +4619,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "swarm_driver average long handling time",
             "value": 1,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "64725c2d850322db3ce1fcf62b175579addb92ed",
+          "message": "Merge pull request #3416 from maqi/ant_cli_readme_updates\n\ndocs: add missing CLI options to ant-cli README",
+          "timestamp": "2026-01-21T16:17:03Z",
+          "tree_id": "eab44272ddce6b0990f21e7133126767ba054b62",
+          "url": "https://github.com/jacderida/autonomi/commit/64725c2d850322db3ce1fcf62b175579addb92ed"
+        },
+        "date": 1769094581262,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "swarm_driver long handling times",
+            "value": 10656,
+            "unit": "hits"
+          },
+          {
+            "name": "swarm_driver long handling total_time",
+            "value": 21894,
+            "unit": "ms"
+          },
+          {
+            "name": "swarm_driver average long handling time",
+            "value": 2,
             "unit": "ms"
           }
         ]
