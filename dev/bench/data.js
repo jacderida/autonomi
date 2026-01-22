@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1769094481945,
+  "lastUpdate": 1769094578854,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -2216,6 +2216,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Peak memory w/ `safe` benchmarks",
             "value": 176,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "64725c2d850322db3ce1fcf62b175579addb92ed",
+          "message": "Merge pull request #3416 from maqi/ant_cli_readme_updates\n\ndocs: add missing CLI options to ant-cli README",
+          "timestamp": "2026-01-21T16:17:03Z",
+          "tree_id": "eab44272ddce6b0990f21e7133126767ba054b62",
+          "url": "https://github.com/jacderida/autonomi/commit/64725c2d850322db3ce1fcf62b175579addb92ed"
+        },
+        "date": 1769094578392,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory w/ `safe` benchmarks",
+            "value": 202,
             "unit": "MB"
           }
         ]
