@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1769094581699,
+  "lastUpdate": 1769892438723,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -1286,6 +1286,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 6.647836509934159,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "14210c997dac96f09d8101353ccacf7df4d413a2",
+          "message": "Merge pull request #3434 from maqi/trusting_score\n\nnode(feature): re-enable trust-based replication scoring",
+          "timestamp": "2026-01-30T15:17:55Z",
+          "tree_id": "6404d9b07e07a32aae134421928decf605c4912b",
+          "url": "https://github.com/jacderida/autonomi/commit/14210c997dac96f09d8101353ccacf7df4d413a2"
+        },
+        "date": 1769892437926,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 1.0025994890230852,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 5.476066004845115,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 6.580146347425678,
             "unit": "MiB/s"
           }
         ]
