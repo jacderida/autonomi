@@ -20,19 +20,9 @@ on:
         description: 'Release tag to verify (e.g., stable-2025.12.3.3 or rc-2025.12.3.3)'
         required: true
         type: string
-      package_type:
-        description: 'Package type to test'
-        required: true
-        type: choice
-        options:
-          - deb
-          - rpm
-          - apt
-        default: deb
 
 jobs:
   verify-deb:
-    if: ${{ inputs.package_type == 'deb' }}
     name: verify deb (${{ matrix.target }})
     runs-on: ubuntu-latest
     strategy:
@@ -139,7 +129,6 @@ jobs:
           echo "Basic functionality tests passed"
 
   verify-rpm:
-    if: ${{ inputs.package_type == 'rpm' }}
     name: verify rpm (${{ matrix.target }})
     runs-on: ubuntu-latest
     container:
@@ -251,7 +240,6 @@ jobs:
           echo "Basic functionality tests passed"
 
   verify-apt:
-    if: ${{ inputs.package_type == 'apt' }}
     name: verify apt repo install
     runs-on: ubuntu-latest
     steps:
