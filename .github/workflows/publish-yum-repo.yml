@@ -1,0 +1,186 @@
+# Reusable workflow for publishing RPM packages to the YUM repository
+#
+# This workflow downloads RPM artifacts from the build, organises them into a
+# standard YUM repository structure (packages/ + repodata/), generates metadata
+# with createrepo, GPG-signs repomd.xml, syncs everything to S3, and
+# invalidates the CloudFront cache.
+#
+# Usage from release.yml:
+#   publish-yum-repo:
+#     needs: [build-linux-rpm]
+#     uses: ./.github/workflows/publish-yum-repo.yml
+#     secrets: inherit
+
+name: publish YUM repository
+
+on:
+  workflow_call:
+    secrets:
+      GPG_PRIVATE_KEY:
+        description: 'GPG private key for repo signing (base64 encoded, armored)'
+        required: true
+      GPG_PASSPHRASE:
+        description: 'Passphrase for GPG private key'
+        required: true
+      YUM_REPO_AWS_ACCESS_KEY_ID:
+        description: 'AWS access key ID for S3 write access'
+        required: true
+      YUM_REPO_AWS_SECRET_ACCESS_KEY:
+        description: 'AWS secret access key for S3 write access'
+        required: true
+      YUM_REPO_BUCKET_NAME:
+        description: 'S3 bucket name hosting the YUM repository'
+        required: true
+      YUM_REPO_CLOUDFRONT_DISTRIBUTION_ID:
+        description: 'CloudFront distribution ID for cache invalidation'
+        required: true
+      YUM_REPO_REGION:
+        description: 'AWS region of the S3 bucket'
+        required: true
+
+jobs:
+  publish:
+    name: publish yum repo
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Install dependencies
+        run: sudo apt-get update && sudo apt-get install -y createrepo-c
+
+      - name: Set package version
+        id: version
+        run: |
+          release_year=$(grep 'release-year:' release-cycle-info | awk '{print $2}')
+          release_month=$(grep 'release-month:' release-cycle-info | awk '{print $2}')
+          release_cycle=$(grep 'release-cycle:' release-cycle-info | awk '{print $2}')
+          release_cycle_counter=$(grep 'release-cycle-counter:' release-cycle-info | awk '{print $2}')
+          version="$release_year.$release_month.$release_cycle.$release_cycle_counter"
+          echo "version=$version" >> $GITHUB_OUTPUT
+          echo "Package version: $version"
+
+      - name: Download all RPM artifacts
+        uses: actions/download-artifact@v7
+        with:
+          pattern: autonomi-rpm-*
+          path: rpm-artifacts/
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.YUM_REPO_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.YUM_REPO_AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.YUM_REPO_REGION }}
+
+      - name: Download existing packages from S3
+        run: |
+          echo "Downloading existing packages/ from S3..."
+          mkdir -p repo
+          aws s3 sync \
+            "s3://${{ secrets.YUM_REPO_BUCKET_NAME }}/packages/" \
+            repo/packages/ \
+            --no-progress || echo "No existing packages/ found (first run)"
+
+          echo "Downloading existing GPG public key..."
+          aws s3 cp \
+            "s3://${{ secrets.YUM_REPO_BUCKET_NAME }}/autonomi-signing-key.asc" \
+            repo/autonomi-signing-key.asc \
+            --no-progress || echo "No existing key found; will upload from repo"
+
+          # Fall back to the key in the repository if not yet in S3
+          if [[ ! -f repo/autonomi-signing-key.asc ]]; then
+            cp resources/keys/autonomi-signing-key.asc repo/autonomi-signing-key.asc
+          fi
+
+      - name: Organise RPMs into packages directory
+        run: |
+          version="${{ steps.version.outputs.version }}"
+
+          for target_dir in rpm-artifacts/autonomi-rpm-*/; do
+            target=$(basename "$target_dir" | sed 's/autonomi-rpm-//')
+            src="${target_dir}${version}.autonomi.${target}.rpm"
+
+            if [[ -f "$src" ]]; then
+              mkdir -p repo/packages/
+              cp "$src" "repo/packages/"
+              echo "Placed: repo/packages/$(basename "$src")"
+            else
+              echo "Warning: RPM not found for $target at $src"
+            fi
+          done
+
+          echo ""
+          echo "Packages directory contents:"
+          find repo/packages/ -name "*.rpm" | sort
+
+      - name: Generate YUM metadata
+        run: |
+          cd repo
+
+          echo "Generating YUM repository metadata with createrepo_c..."
+          createrepo_c --update .
+
+          echo ""
+          echo "Metadata files:"
+          find repodata/ -type f | sort
+
+      - name: Import GPG key
+        id: gpg
+        run: |
+          echo "Importing GPG key..."
+          echo "${{ secrets.GPG_PRIVATE_KEY }}" | base64 -d | gpg --batch --import
+
+          key_id=$(gpg --list-secret-keys --keyid-format LONG | grep sec | head -1 | awk '{print $2}' | cut -d'/' -f2)
+          echo "GPG Key ID: $key_id"
+          echo "key_id=$key_id" >> $GITHUB_OUTPUT
+
+          # Configure GPG for non-interactive use
+          mkdir -p ~/.gnupg
+          echo "allow-loopback-pinentry" >> ~/.gnupg/gpg-agent.conf
+          echo "pinentry-mode loopback" >> ~/.gnupg/gpg.conf
+          gpg-connect-agent reloadagent /bye || true
+
+      - name: Sign repomd.xml
+        env:
+          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+        run: |
+          cd repo
+          key_id="${{ steps.gpg.outputs.key_id }}"
+
+          echo "Signing repomd.xml..."
+
+          # Create detached ASCII signature for repomd.xml
+          gpg --batch --yes --pinentry-mode loopback \
+            --passphrase "$GPG_PASSPHRASE" --default-key "$key_id" \
+            --detach-sign --armor -o repodata/repomd.xml.asc repodata/repomd.xml
+
+          echo "Signed files:"
+          ls -la repodata/repomd.xml.asc
+
+      - name: Sync to S3
+        run: |
+          echo "Syncing YUM repository to S3..."
+          aws s3 sync repo/ "s3://${{ secrets.YUM_REPO_BUCKET_NAME }}/" \
+            --delete \
+            --no-progress
+
+          echo "Sync complete"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          echo "Invalidating CloudFront cache..."
+          invalidation_id=$(aws cloudfront create-invalidation \
+            --distribution-id "${{ secrets.YUM_REPO_CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*" \
+            --query 'Invalidation.Id' \
+            --output text)
+
+          echo "Invalidation created: $invalidation_id"
+          echo "Waiting for invalidation to complete..."
+
+          aws cloudfront wait invalidation-completed \
+            --distribution-id "${{ secrets.YUM_REPO_CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --id "$invalidation_id"
+
+          echo "CloudFront cache invalidated"

@@ -344,3 +344,116 @@ jobs:
           sudo apt-get update
           sudo apt-get upgrade -y autonomi
           echo "Upgrade check completed successfully"
+
+  verify-yum:
+    name: verify yum repo install
+    runs-on: ubuntu-latest
+    container:
+      image: fedora:latest
+    steps:
+      - name: Extract version from tag
+        id: version
+        run: |
+          tag="${{ inputs.release_tag }}"
+          version="${tag#*-}"
+          echo "version=$version" >> $GITHUB_OUTPUT
+          echo "Extracted version: $version"
+
+      - name: Configure YUM repository
+        run: |
+          echo "Importing Autonomi signing key..."
+          rpm --import "https://${{ secrets.YUM_REPO_DOMAIN }}/autonomi-signing-key.asc"
+
+          echo "Adding YUM repository..."
+          cat > /etc/yum.repos.d/autonomi.repo <<EOF
+          [autonomi]
+          name=Autonomi Network CLI Suite
+          baseurl=https://${{ secrets.YUM_REPO_DOMAIN }}
+          enabled=1
+          gpgcheck=1
+          gpgkey=https://${{ secrets.YUM_REPO_DOMAIN }}/autonomi-signing-key.asc
+          EOF
+
+          # Remove leading whitespace from heredoc
+          sed -i 's/^          //' /etc/yum.repos.d/autonomi.repo
+
+          echo "Repository configured:"
+          cat /etc/yum.repos.d/autonomi.repo
+
+      - name: Install autonomi package
+        run: |
+          echo "Refreshing repository metadata..."
+          dnf makecache
+
+          echo "Checking autonomi package is available..."
+          dnf info autonomi
+
+          echo "Installing autonomi via dnf..."
+          dnf install -y autonomi
+
+      - name: Verify installed version
+        run: |
+          version="${{ steps.version.outputs.version }}"
+          echo "Expected version: $version"
+
+          echo ""
+          echo "Installed package version:"
+          rpm -qi autonomi | grep -i version
+
+      - name: Verify binaries are installed
+        run: |
+          echo "Checking binary locations..."
+
+          for binary in ant antnode antctl; do
+            path="/usr/local/bin/$binary"
+            if [[ -x "$path" ]]; then
+              echo "  $binary: OK ($path)"
+            else
+              echo "  $binary: MISSING or not executable"
+              exit 1
+            fi
+          done
+
+          echo "All binaries installed correctly"
+
+      - name: Verify binaries execute
+        run: |
+          echo "Testing binary execution..."
+
+          echo "ant --version:"
+          /usr/local/bin/ant --version
+
+          echo ""
+          echo "antnode --version:"
+          /usr/local/bin/antnode --version
+
+          echo ""
+          echo "antctl --version:"
+          /usr/local/bin/antctl --version
+
+          echo ""
+          echo "All binaries execute correctly"
+
+      - name: Test basic functionality
+        run: |
+          echo "Testing basic functionality..."
+
+          echo "ant --help:"
+          /usr/local/bin/ant --help | head -20
+
+          echo ""
+          echo "antnode --help:"
+          /usr/local/bin/antnode --help | head -20
+
+          echo ""
+          echo "antctl --help:"
+          /usr/local/bin/antctl --help | head -20
+
+          echo ""
+          echo "Basic functionality tests passed"
+
+      - name: Verify upgrade path
+        run: |
+          echo "Testing dnf upgrade path..."
+          dnf upgrade -y autonomi
+          echo "Upgrade check completed successfully"

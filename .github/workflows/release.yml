@@ -565,6 +565,23 @@ jobs:
       APT_REPO_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.APT_REPO_CLOUDFRONT_DISTRIBUTION_ID }}
       APT_REPO_REGION: ${{ secrets.APT_REPO_REGION }}
 
+  publish-yum-repo:
+    if: ${{
+        github.repository_owner == 'maidsafe' &&
+        (github.ref == 'refs/heads/stable' || startsWith(github.ref, 'refs/heads/rc'))
+      }}
+    name: publish yum repo
+    needs: [build-linux-rpm]
+    uses: ./.github/workflows/publish-yum-repo.yml
+    secrets:
+      GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+      YUM_REPO_AWS_ACCESS_KEY_ID: ${{ secrets.YUM_REPO_AWS_ACCESS_KEY_ID }}
+      YUM_REPO_AWS_SECRET_ACCESS_KEY: ${{ secrets.YUM_REPO_AWS_SECRET_ACCESS_KEY }}
+      YUM_REPO_BUCKET_NAME: ${{ secrets.YUM_REPO_BUCKET_NAME }}
+      YUM_REPO_CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.YUM_REPO_CLOUDFRONT_DISTRIBUTION_ID }}
+      YUM_REPO_REGION: ${{ secrets.YUM_REPO_REGION }}
+
   s3-release:
     if: ${{
         github.repository_owner == 'maidsafe' &&
@@ -972,7 +989,39 @@ jobs:
             echo ""
             echo "---"
             echo ""
-            echo "### Linux CLI Suite (Fedora/RHEL/CentOS)"
+            echo "### Linux CLI Suite via YUM/DNF Repository (Recommended for Fedora/RHEL/CentOS)"
+            echo ""
+            echo "The easiest way to install and keep the Autonomi CLI suite up to date on RPM-based distributions."
+            echo ""
+            echo "**One-time setup:**"
+            echo "\`\`\`bash"
+            echo "# Import the signing key"
+            echo "sudo rpm --import https://${{ secrets.YUM_REPO_DOMAIN }}/autonomi-signing-key.asc"
+            echo ""
+            echo "# Add the repository"
+            echo "sudo tee /etc/yum.repos.d/autonomi.repo <<EOF"
+            echo "[autonomi]"
+            echo "name=Autonomi Network CLI Suite"
+            echo "baseurl=https://${{ secrets.YUM_REPO_DOMAIN }}"
+            echo "enabled=1"
+            echo "gpgcheck=1"
+            echo "gpgkey=https://${{ secrets.YUM_REPO_DOMAIN }}/autonomi-signing-key.asc"
+            echo "EOF"
+            echo "\`\`\`"
+            echo ""
+            echo "**Install:**"
+            echo "\`\`\`bash"
+            echo "sudo dnf install autonomi"
+            echo "\`\`\`"
+            echo ""
+            echo "**Update to latest version:**"
+            echo "\`\`\`bash"
+            echo "sudo dnf upgrade autonomi"
+            echo "\`\`\`"
+            echo ""
+            echo "---"
+            echo ""
+            echo "### Linux CLI Suite (Fedora/RHEL/CentOS) - Manual RPM Install"
             echo ""
             echo "Install \`ant\`, \`antnode\`, and \`antctl\` using the signed rpm package."
             echo ""
