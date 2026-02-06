@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1770413564934,
+  "lastUpdate": 1770413566515,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -3534,6 +3534,40 @@ window.BENCHMARK_DATA = {
           {
             "name": "Peak memory usage w/ upload",
             "value": 15,
+            "unit": "MB"
+          },
+          {
+            "name": "Average memory usage w/ upload",
+            "value": 14,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "01fab9bb4f2100634edad57e2ada1da912f82bef",
+          "message": "Merge pull request #3446 from maidsafe/dependabot/cargo/bytes-1.11.1\n\nchore(deps): bump bytes from 1.11.0 to 1.11.1",
+          "timestamp": "2026-02-05T10:42:53Z",
+          "tree_id": "e041ff7c5ddd91ae031227e7176a54391bec7a5a",
+          "url": "https://github.com/jacderida/autonomi/commit/01fab9bb4f2100634edad57e2ada1da912f82bef"
+        },
+        "date": 1770413565940,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory usage w/ upload",
+            "value": 20,
             "unit": "MB"
           },
           {
