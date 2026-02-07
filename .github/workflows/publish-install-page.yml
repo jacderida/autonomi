@@ -1,0 +1,88 @@
+# Reusable workflow for publishing the install page to S3 + CloudFront
+#
+# This workflow generates the install page from the HTML template, uploads it
+# to S3, and invalidates the CloudFront cache.
+#
+# Usage from release.yml:
+#   publish-install-page:
+#     needs: [release]
+#     uses: ./.github/workflows/publish-install-page.yml
+#     with:
+#       version: "0.3.1"
+#     secrets: inherit
+
+name: publish install page
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        description: 'Release version (e.g., 0.3.1)'
+        required: true
+        type: string
+    secrets:
+      INSTALL_PAGE_AWS_ACCESS_KEY_ID:
+        description: 'AWS access key ID for S3 write access'
+        required: true
+      INSTALL_PAGE_AWS_SECRET_ACCESS_KEY:
+        description: 'AWS secret access key for S3 write access'
+        required: true
+      INSTALL_PAGE_BUCKET_NAME:
+        description: 'S3 bucket name hosting the install page'
+        required: true
+      INSTALL_PAGE_CLOUDFRONT_DISTRIBUTION_ID:
+        description: 'CloudFront distribution ID for cache invalidation'
+        required: true
+      INSTALL_PAGE_REGION:
+        description: 'AWS region of the S3 bucket'
+        required: true
+      APT_REPO_DOMAIN:
+        description: 'Domain for the APT repository'
+        required: true
+      YUM_REPO_DOMAIN:
+        description: 'Domain for the YUM repository'
+        required: true
+
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Release version (e.g., 0.3.1)'
+        required: true
+        type: string
+
+jobs:
+  publish:
+    name: publish install page
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Generate install page
+        run: |
+          python3 resources/scripts/generate-install-page.py \
+            --version "${{ inputs.version }}" \
+            --download-url "https://github.com/maidsafe/autonomi/releases/download/release-${{ inputs.version }}" \
+            --apt-domain "${{ secrets.APT_REPO_DOMAIN }}" \
+            --yum-domain "${{ secrets.YUM_REPO_DOMAIN }}" \
+            --output index.html
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.INSTALL_PAGE_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.INSTALL_PAGE_AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.INSTALL_PAGE_REGION }}
+
+      - name: Upload to S3
+        run: |
+          aws s3 cp index.html \
+            "s3://${{ secrets.INSTALL_PAGE_BUCKET_NAME }}/index.html" \
+            --content-type "text/html; charset=utf-8" \
+            --cache-control "public, max-age=300"
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ secrets.INSTALL_PAGE_CLOUDFRONT_DISTRIBUTION_ID }}" \
+            --paths "/*"

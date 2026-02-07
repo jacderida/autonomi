@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Install Autonomi</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iMTYiIGZpbGw9InVybCgjcGFpbnQwX2xpbmVhcl82MjZfMzI0KSIvPgo8ZyBmaWx0ZXI9InVybCgjZmlsdGVyMF9pXzYyNl8zMjQpIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0xOS43Nzk2IDEyLjg4NzlDMTMuNDUwMyAxMi44ODc5IDguMzE5NjQgMTguMDE4NiA4LjMxOTY0IDI0LjM0NzhDOC4zMTk2NCAyNC40MDA4IDguMzIwMDIgMjQuNDUzNyA4LjMyMDgxIDI0LjUwNjNDMTAuMzUyNiAyNi4zNDE3IDEzLjA0NTQgMjcuNDU4OSAxNS45OTkyIDI3LjQ1ODlDMjAuNzQwNCAyNy40NTg5IDI0LjgwOTUgMjQuNTc5MyAyNi41NTI1IDIwLjQ3MzlDMjcuMTM2IDE5LjA5OSAyNy40NTkyIDE3LjU4NjggMjcuNDU5MiAxNS45OTlDMjcuNDU5MiAxNS45NDYxIDI3LjQ1ODggMTUuODkzMSAyNy40NTggMTUuODQwMkMyNy4zNzMxIDkuNTg0NCAyMi4yNzUyIDQuNTM5MDYgMTUuOTk5MiA0LjUzOTA2QzE0LjIwNjUgNC41MzkwNiAxMi41MTAxIDQuOTUwMzEgMTAuOTk5MyA1LjY4NDM0QzcuNzc3MjIgNy4yNDg3OCA1LjM5ODU1IDEwLjI3ODkgNC43MjkzMiAxMy45MDc1QzQuNjE3MTIgMTQuNTE3MSA0LjU1MzExIDE1LjE0MjkgNC41NDEyNiAxNS43ODIxQzQuNTU4MjUgMTUuNzgyMSA0LjU3NTYzIDE1Ljc4MjEgNC41OTMwMiAxNS43ODIxQzguNTAyOTQgMTUuNzgyMSAxMS42NzI5IDEyLjYxMjUgMTEuNjcyOSA4LjcwMjIyQzExLjY3MjkgOC4zMDQ3OSAxMS42NDAxIDcuOTE0ODYgMTEuNTc3MyA3LjUzNTJDMTIuNzM5NiA3LjEzODE3IDEzLjk4NiA2LjkyMjg2IDE1LjI4MyA2LjkyMjg2QzIwLjM3NzMgNi45MjI4NiAyNC42OTUzIDEwLjI0NjkgMjYuMTg2MyAxNC44NDQyQzI0LjM1NzIgMTMuNjA4OSAyMi4xNTI3IDEyLjg4NzkgMTkuNzc5NiAxMi44ODc5Wk0xNy44MDA3IDI0Ljg2NUMyMS4wOTM2IDI0Ljg2NSAyMy44NjE3IDIyLjYxNzEgMjQuNjUzNSAxOS41NzJDMjMuODQ5OSAxOS4yNTUxIDIyLjk3NDEgMTkuMDgxMyAyMi4wNTc5IDE5LjA4MTNDMTguNzY1MSAxOS4wODEzIDE1Ljk5NzMgMjEuMzI5MiAxNS4yMDU2IDI0LjM3MzlDMTYuMDA5MSAyNC42OTA4IDE2Ljg4NDYgMjQuODY1IDE3LjgwMDcgMjQuODY1WiIgZmlsbD0iI0ZGMzM1NSIvPgo8L2c+CjxkZWZzPgo8ZmlsdGVyIGlkPSJmaWx0ZXIwX2lfNjI2XzMyNCIgeD0iNC41NDEyNiIgeT0iNC41MzkwNiIgd2lkdGg9IjMwLjkxOCIgaGVpZ2h0PSIyNy45MTgiIGZpbHRlclVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY29sb3ItaW50ZXJwb2xhdGlvbi1maWx0ZXJzPSJzUkdCIj4KPGZlRmxvb2QgZmxvb2Qtb3BhY2l0eT0iMCIgcmVzdWx0PSJCYWNrZ3JvdW5kSW1hZ2VGaXgiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbj0iU291cmNlR3JhcGhpYyIgaW4yPSJCYWNrZ3JvdW5kSW1hZ2VGaXgiIHJlc3VsdD0ic2hhcGUiLz4KPGZlQ29sb3JNYXRyaXggaW49IlNvdXJjZUFscGhhIiB0eXBlPSJtYXRyaXgiIHZhbHVlcz0iMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMTI3IDAiIHJlc3VsdD0iaGFyZEFscGhhIi8+CjxmZU9mZnNldCBkeD0iOCIgZHk9IjUiLz4KPGZlR2F1c3NpYW5CbHVyIHN0ZERldmlhdGlvbj0iNSIvPgo8ZmVDb21wb3NpdGUgaW4yPSJoYXJkQWxwaGEiIG9wZXJhdG9yPSJhcml0aG1ldGljIiBrMj0iLTEiIGszPSIxIi8+CjxmZUNvbG9yTWF0cml4IHR5cGU9Im1hdHJpeCIgdmFsdWVzPSIwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwIDAgMCAwLjA1IDAiLz4KPGZlQmxlbmQgbW9kZT0ibm9ybWFsIiBpbjI9InNoYXBlIiByZXN1bHQ9ImVmZmVjdDFfaW5uZXJTaGFkb3dfNjI2XzMyNCIvPgo8L2ZpbHRlcj4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDBfbGluZWFyXzYyNl8zMjQiIHgxPSI4LjI5NjMiIHkxPSIzLjk0NDY0ZS0wNyIgeDI9IjIwLjc4MDIiIHkyPSIzNC4yOTE0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIG9mZnNldD0iMC4xODk0NTUiIHN0b3AtY29sb3I9IiNFQkVGRjUiLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjQkRDM0NDIi8+CjwvbGluZWFyR3JhZGllbnQ+CjwvZGVmcz4KPC9zdmc+Cg==">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg-primary: #1a1a2e;
+      --bg-secondary: #26264c;
+      --bg-card: #2a2a50;
+      --bg-code: #1e1e3a;
+      --text-primary: #ebeff5;
+      --text-secondary: #a0a4b8;
+      --text-muted: #6b6f85;
+      --accent: #ff3355;
+      --accent-hover: #ff4d6a;
+      --accent-subtle: rgba(255, 51, 85, 0.15);
+      --border: #3a3a60;
+      --border-hover: #4a4a70;
+      --success: #4ade80;
+      --radius: 8px;
+      --radius-lg: 12px;
+      --font-mono: 'SF Mono', 'Cascadia Code', 'Fira Code', Consolas, monospace;
+      --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      --max-width: 960px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-sans);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border);
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .header-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 420px;
+      height: auto;
+      display: block;
+      margin-bottom: 1rem;
+      margin-left: -1.5rem;
+    }
+
+    .header h1 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .header p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+    }
+
+    .version-badge {
+      display: inline-block;
+      background: var(--accent-subtle);
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-top: 0.75rem;
+      border: 1px solid rgba(255, 51, 85, 0.3);
+    }
+
+    /* Main content */
+    .main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    /* OS Tabs */
+    .os-tabs {
+      display: flex;
+      gap: 0;
+      margin-bottom: 2rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .os-tab {
+      flex: 1;
+      padding: 1rem 1.5rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      font-weight: 500;
+      font-family: var(--font-sans);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .os-tab:hover {
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .os-tab.active {
+      color: var(--text-primary);
+      border-bottom-color: var(--accent);
+    }
+
+    .os-tab svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .os-panel {
+      display: none;
+    }
+
+    .os-panel.active {
+      display: block;
+    }
+
+    /* Section cards */
+    .section {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section h2 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-top: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .section p {
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+
+    .recommended {
+      display: inline-block;
+      background: var(--accent-subtle);
+      color: var(--accent);
+      padding: 0.125rem 0.5rem;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* Download links */
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 0.75rem;
+      margin: 0.75rem 0;
+    }
+
+    .download-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg-code);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: all 0.2s ease;
+    }
+
+    .download-link:hover {
+      border-color: var(--accent);
+      background: var(--accent-subtle);
+    }
+
+    .download-link .arch {
+      font-weight: 600;
+    }
+
+    .download-link .ext {
+      color: var(--text-muted);
+      margin-left: auto;
+      font-size: 0.8rem;
+    }
+
+    /* Code blocks */
+    .code-block {
+      position: relative;
+      background: var(--bg-code);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin: 0.75rem 0;
+      overflow: hidden;
+    }
+
+    .code-block pre {
+      padding: 1rem;
+      padding-right: 3.5rem;
+      overflow-x: auto;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      white-space: pre;
+    }
+
+    .code-block .comment {
+      color: var(--text-muted);
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.375rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .copy-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--border-hover);
+    }
+
+    .copy-btn.copied {
+      color: var(--success);
+      border-color: var(--success);
+    }
+
+    .copy-btn svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    /* Verify section */
+    .verify {
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .verify h3 {
+      margin-top: 0;
+    }
+
+    /* Steps */
+    .steps {
+      counter-reset: step;
+    }
+
+    .step {
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .step::before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1.75rem;
+      height: 1.75rem;
+      background: var(--accent-subtle);
+      color: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .step p {
+      margin-bottom: 0.5rem;
+    }
+
+    /* Separator */
+    .section-divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0.75rem 0;
+    }
+
+    /* Note box */
+    .note {
+      background: rgba(255, 51, 85, 0.08);
+      border: 1px solid rgba(255, 51, 85, 0.2);
+      border-radius: var(--radius);
+      padding: 0.75rem 1rem;
+      margin: 0.75rem 0;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    .note strong {
+      color: var(--accent);
+    }
+
+    /* Architecture list */
+    .arch-list {
+      list-style: none;
+      margin: 0.5rem 0;
+    }
+
+    .arch-list li {
+      color: var(--text-secondary);
+      padding: 0.25rem 0;
+      font-size: 0.9rem;
+    }
+
+    .arch-list li strong {
+      color: var(--text-primary);
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      border-top: 1px solid var(--border);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .header { padding: 1.5rem 1rem; }
+      .main { padding: 1.5rem 1rem 3rem; }
+      .logo { max-width: 300px; }
+      .header h1 { font-size: 1.25rem; }
+      .os-tab { padding: 0.75rem 0.5rem; font-size: 0.875rem; }
+      .os-tab span.tab-label { display: none; }
+      .section { padding: 1.25rem; }
+      .download-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <svg class="logo" viewBox="0 0 880.26868 178.8584" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(1021.2916,1212.8502)">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="m -833.15861,-1135.5653 c -27.9109,0 -50.53542,22.6246 -50.53542,50.5354 0,0.2329 0.003,0.4657 0.005,0.6985 8.96144,8.0937 20.83329,13.0202 33.85873,13.0202 20.90738,0 38.85142,-12.6974 46.53756,-30.8002 2.5744,-6.0642 3.99786,-12.7317 3.99786,-19.7352 0,-0.2329 0,-0.4657 -0.005,-0.6985 -0.37307,-27.5881 -22.85471,-49.8369 -50.53013,-49.8369 -7.9031,0 -15.38552,1.815 -22.04773,5.0509 -14.20812,6.9003 -24.69621,20.2617 -27.64896,36.2637 -0.49477,2.6856 -0.77787,5.4478 -0.83079,8.2656 0.0767,0 0.15346,0 0.23019,0 17.2429,0 31.22083,-13.9779 31.22083,-31.2208 0,-1.7542 -0.14552,-3.4713 -0.42333,-5.1461 5.12762,-1.7516 10.62302,-2.7014 16.34067,-2.7014 22.46577,0 41.50783,14.6579 48.08272,34.9329 -8.0645,-5.4478 -17.78793,-8.6281 -28.2522,-8.6281 z m -8.72596,52.8162 c 14.52033,0 26.72556,-9.914 30.21806,-23.3416 -3.54277,-1.397 -7.40569,-2.1643 -11.44587,-2.1643 -14.52034,0 -26.72557,9.914 -30.21807,23.3416 3.54542,1.397 7.40569,2.1643 11.44588,2.1643 z" fill="#ebeff5"/>
+          <path d="m -271.05927,-1158.1739 c -2.61143,0 -4.79954,-0.8123 -6.56166,-2.4342 -1.69334,-1.6933 -2.54,-3.7756 -2.54,-6.2441 0,-2.4713 0.84666,-4.5165 2.54,-6.1384 1.76212,-1.6933 3.95023,-2.54 6.56166,-2.54 2.6088,0 4.7625,0.8467 6.45584,2.54 1.76212,1.6219 2.64583,3.6671 2.64583,6.1384 0,2.4685 -0.88371,4.5508 -2.64583,6.2441 -1.69334,1.6219 -3.84704,2.4342 -6.45584,2.4342 z m 7.3025,6.985 v 58.6317 h -14.81666 v -58.6317 z" fill="#ebeff5"/>
+          <path d="m -313.48256,-1152.0356 c 7.19667,0 12.98046,2.2225 17.35667,6.6675 4.445,4.3736 6.6675,10.5119 6.6675,18.415 v 34.3959 h -14.81667 v -32.385 c 0,-4.5879 -1.16416,-8.0804 -3.4925,-10.4775 -2.32833,-2.4713 -5.50333,-3.7042 -9.525,-3.7042 -4.02166,0 -7.23371,1.2329 -9.63083,3.7042 -2.32833,2.3971 -3.4925,5.8896 -3.4925,10.4775 v 32.385 h -14.81667 v -32.385 c 0,-4.5879 -1.16416,-8.0804 -3.4925,-10.4775 -2.32833,-2.4713 -5.50333,-3.7042 -9.525,-3.7042 -4.0931,0 -7.33954,1.2329 -9.73666,3.7042 -2.32834,2.3971 -3.4925,5.8896 -3.4925,10.4775 v 32.385 h -14.81667 v -58.6317 h 14.81667 v 7.0908 c 1.905,-2.4712 4.33916,-4.4106 7.3025,-5.8208 3.03212,-1.4129 6.35,-2.1167 9.94833,-2.1167 4.58523,0 8.67833,0.9869 12.27667,2.9634 3.59833,1.905 6.38439,4.6566 8.36083,8.255 1.905,-3.3867 4.65667,-6.104 8.255,-8.1492 3.66712,-2.0479 7.62,-3.0692 11.85333,-3.0692 z" fill="#ebeff5"/>
+          <path d="m -424.57581,-1091.6047 c -5.64356,0 -10.72356,-1.2357 -15.24,-3.7042 -4.51643,-2.54 -8.07773,-6.104 -10.68916,-10.6892 -2.54,-4.5879 -3.81,-9.8795 -3.81,-15.875 0,-5.9981 1.30439,-11.2898 3.91583,-15.875 2.68023,-4.5879 6.3156,-8.1148 10.90083,-10.5833 4.58523,-2.54 9.70227,-3.81 15.34584,-3.81 5.64356,0 10.7606,1.27 15.34583,3.81 4.58523,2.4685 8.18356,5.9954 10.795,10.5833 2.68023,4.5852 4.02167,9.8769 4.02167,15.875 0,5.9955 -1.37584,11.2871 -4.1275,15.875 -2.68023,4.5852 -6.35,8.1492 -11.00667,10.6892 -4.58523,2.4685 -9.73667,3.7042 -15.45167,3.7042 z m 0,-12.9117 c 2.68023,0 5.18584,-0.635 7.51417,-1.905 2.39977,-1.3415 4.30477,-3.3179 5.715,-5.9267 1.41023,-2.6114 2.11667,-5.7864 2.11667,-9.525 0,-5.5748 -1.48167,-9.8425 -4.445,-12.8058 -2.8919,-3.0348 -6.45584,-4.5508 -10.68917,-4.5508 -4.23333,0 -7.79727,1.516 -10.68917,4.5508 -2.8231,2.9633 -4.23333,7.231 -4.23333,12.8058 0,5.5721 1.37583,9.8769 4.1275,12.9117 2.8231,2.9633 6.35,4.445 10.58333,4.445 z" fill="#ebeff5"/>
+          <path d="m -484.91403,-1152.0356 c 6.985,0 12.62856,2.2225 16.93333,6.6675 4.30212,4.3736 6.45583,10.5119 6.45583,18.415 v 34.3959 h -14.81666 v -32.385 c 0,-4.6567 -1.16417,-8.2207 -3.4925,-10.6892 -2.32834,-2.54 -5.50334,-3.81 -9.525,-3.81 -4.09311,0 -7.33955,1.27 -9.73667,3.81 -2.32833,2.4685 -3.4925,6.0325 -3.4925,10.6892 v 32.385 h -14.81667 v -58.6317 h 14.81667 v 7.3025 c 1.97379,-2.54 4.47939,-4.5165 7.51417,-5.9267 3.10356,-1.4816 6.49022,-2.2225 10.16,-2.2225 z" fill="#ebeff5"/>
+          <path d="m -555.68478,-1091.6047 c -5.64621,0 -10.72621,-1.2357 -15.24,-3.7042 -4.51644,-2.54 -8.08038,-6.104 -10.68917,-10.6892 -2.54,-4.5879 -3.81,-9.8795 -3.81,-15.875 0,-5.9981 1.3044,-11.2898 3.91583,-15.875 2.68023,-4.5879 6.31296,-8.1148 10.90084,-10.5833 4.58523,-2.54 9.69962,-3.81 15.34583,-3.81 5.64356,0 10.75796,1.27 15.34583,3.81 4.58523,2.4685 8.18357,5.9954 10.795,10.5833 2.68023,4.5852 4.02167,9.8769 4.02167,15.875 0,5.9955 -1.37583,11.2871 -4.1275,15.875 -2.68288,4.5852 -6.35,8.1492 -11.00667,10.6892 -4.58787,2.4685 -9.73666,3.7042 -15.45166,3.7042 z m 0,-12.9117 c 2.68023,0 5.18583,-0.635 7.51416,-1.905 2.39713,-1.3415 4.30213,-3.3179 5.715,-5.9267 1.41023,-2.6114 2.11667,-5.7864 2.11667,-9.525 0,-5.5748 -1.48167,-9.8425 -4.445,-12.8058 -2.89454,-3.0348 -6.45583,-4.5508 -10.68917,-4.5508 -4.23333,0 -7.79727,1.516 -10.68916,4.5508 -2.82311,2.9633 -4.23334,7.231 -4.23334,12.8058 0,5.5721 1.37584,9.8769 4.1275,12.9117 2.82046,2.9633 6.35,4.445 10.58334,4.445 z" fill="#ebeff5"/>
+          <path d="m -602.32553,-1139.0181 v 28.3634 c 0,1.9737 0.45773,3.421 1.37583,4.3391 0.9869,0.8467 2.61144,1.27 4.86833,1.27 h 6.87917 v 12.4884 h -9.31333 c -12.48834,0 -18.7325,-6.0696 -18.7325,-18.2034 v -28.2575 h -6.985 v -12.1708 h 6.985 v -14.4992 h 14.9225 v 14.4992 h 13.12333 v 12.1708 z" fill="#ebeff5"/>
+          <path d="m -631.0196,-1151.1889 v 58.6317 h -14.9225 v -7.4084 c -1.905,2.54 -4.4106,4.5509 -7.51416,6.0325 -3.03477,1.4102 -6.35,2.1167 -9.94833,2.1167 -4.58788,0 -8.64394,-0.9525 -12.17084,-2.8575 -3.52954,-1.9765 -6.3156,-4.834 -8.36083,-8.5725 -1.97644,-3.81 -2.96333,-8.3265 -2.96333,-13.5467 v -34.3958 h 14.81666 v 32.2792 c 0,4.6566 1.16417,8.255 3.4925,10.795 2.32834,2.4685 5.50334,3.7041 9.525,3.7041 4.09046,0 7.3025,-1.2356 9.63083,-3.7041 2.32834,-2.54 3.4925,-6.1384 3.4925,-10.795 v -32.2792 z" fill="#ebeff5"/>
+          <path d="m -758.73397,-1122.0847 c 0,-5.9267 1.16417,-11.184 3.4925,-15.7692 2.39977,-4.5879 5.60917,-8.1148 9.63083,-10.5833 4.09311,-2.4713 8.64394,-3.7042 13.6525,-3.7042 4.37621,0 8.18621,0.881 11.43,2.6458 3.31788,1.7621 5.96371,3.9846 7.9375,6.6675 v -8.3608 h 14.9225 v 58.6317 h -14.9225 v -8.5725 c -1.905,2.7516 -4.55083,5.0429 -7.9375,6.8791 -3.31523,1.7621 -7.15962,2.6459 -11.53583,2.6459 -4.93712,0 -9.45356,-1.27 -13.54667,-3.81 -4.02166,-2.54 -7.23106,-6.104 -9.63083,-10.6892 -2.32833,-4.6567 -3.4925,-9.9854 -3.4925,-15.9808 z m 46.14333,0.2116 c 0,-3.5983 -0.70379,-6.6675 -2.11666,-9.2075 -1.41023,-2.6114 -3.31523,-4.5879 -5.715,-5.9266 -2.39713,-1.4129 -4.97417,-2.1167 -7.72584,-2.1167 -2.75166,0 -5.29166,0.6694 -7.62,2.0108 -2.32833,1.3388 -4.23333,3.3152 -5.715,5.9267 -1.41022,2.54 -2.11666,5.5721 -2.11666,9.1017 0,3.5268 0.70644,6.6304 2.11666,9.3133 1.48167,2.6088 3.38667,4.6196 5.715,6.0325 2.39978,1.4102 4.93978,2.1167 7.62,2.1167 2.75167,0 5.32871,-0.6721 7.72584,-2.0109 2.39977,-1.4129 4.30477,-3.3866 5.715,-5.9266 1.41287,-2.6115 2.11666,-5.715 2.11666,-9.3134 z" fill="#ebeff5"/>
+        </g>
+      </svg>
+      <h1>Installation Options</h1>
+      <p>Choose your platform and preferred installation method</p>
+      <span class="version-badge">{{VERSION}}</span>
+    </div>
+  </header>
+
+  <main class="main">
+    <nav class="os-tabs" role="tablist">
+      <button class="os-tab active" role="tab" aria-selected="true" data-tab="macos">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span class="tab-label">macOS</span>
+      </button>
+      <button class="os-tab" role="tab" aria-selected="false" data-tab="windows">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 12V6.75l6-1.32v6.48L3 12zm17-9v8.75l-10 .08V5.21L20 3zm-10 9.04l10-.08V21l-10-1.91V12.04zM3 12.5l6 .09v6.33l-6-1.07V12.5z"/></svg>
+        <span class="tab-label">Windows</span>
+      </button>
+      <button class="os-tab" role="tab" aria-selected="false" data-tab="linux">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 00-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.368 1.884 1.43.871.074 1.68-.223 2.21-.662.497-.41.804-.97.743-1.467-.01-.079-.03-.153-.056-.222-.116-.467.123-.871.32-1.298.197-.426.363-.923.283-1.525-.082-.612-.517-1.08-1.026-1.378a.82.82 0 00.043-.14c.073-.237.135-.544.191-.907.056-.362.156-.78.021-1.263-.052-.176-.126-.341-.207-.498.31-.773.463-1.58.447-2.376-.016-.814-.197-1.626-.574-2.366a6.84 6.84 0 00-1.208-1.621c-.544-.571-1.142-1.056-1.57-1.673-.428-.617-.714-1.376-.74-2.542-.004-.165-.003-.339.005-.5.01-.181.025-.365.025-.548 0-1.843-1.283-3.567-3.497-3.567zm-.39 1.177c1.018.021 1.992.545 2.27 1.622.168.65.077 1.238.05 1.773-.005.082-.01.161-.012.24-.032 1.39.324 2.36.875 3.11.55.75 1.216 1.306 1.756 1.874.527.556.941 1.13 1.166 1.792.226.664.289 1.42.135 2.386a6.94 6.94 0 01-.275 1.073c-.32-.18-.71-.283-1.166-.253-.836.038-1.44.413-2.016.465-.434.039-1.034-.06-1.835-.09-.002.001-.007.001-.016.001a5.603 5.603 0 00-1.46.22c.01-.066.02-.13.024-.197.034-.67-.138-1.227-.478-1.685-.169-.228-.365-.414-.582-.574-.217-.16-.488-.3-.737-.328-.404-.046-.808.002-1.089.137-.28.135-.501.33-.677.554-.176.224-.318.48-.437.741-.028.06-.052.122-.076.183a2.663 2.663 0 00-.211-.04 2.105 2.105 0 00-.235-.018c.011-.052.025-.104.036-.157.082-.385.128-.742.142-1.048.016-.378-.04-.662-.22-.865-.18-.204-.441-.28-.712-.31-.271-.03-.577-.025-.917.024-.326.047-.617.057-.849.012a.748.748 0 01-.218-.083 4.03 4.03 0 01.195-1.153c.533-1.603 1.727-3.205 2.528-4.158.858-1.204 1.124-2.258 1.207-3.529.053-.773.043-1.71.432-2.487.33-.66.826-1.048 1.554-1.114.08-.007.16-.01.239-.01z"/></svg>
+        <span class="tab-label">Linux</span>
+      </button>
+    </nav>
+
+    <!-- macOS Panel -->
+    <div class="os-panel active" id="panel-macos">
+      <div class="section">
+        <h2>CLI Suite</h2>
+        <p>Install <code>ant</code>, <code>antnode</code>, and <code>antctl</code> using the signed and notarized package installer.</p>
+
+        <h3>Download</h3>
+        <div class="download-grid">
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.aarch64-apple-darwin.pkg" class="download-link">
+            <span class="arch">Apple Silicon</span>
+            <span class="ext">.pkg</span>
+          </a>
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.x86_64-apple-darwin.pkg" class="download-link">
+            <span class="arch">Intel</span>
+            <span class="ext">.pkg</span>
+          </a>
+        </div>
+
+        <p>Double-click the downloaded file and follow the installation prompts. The binaries will be installed to <code>/usr/local/bin</code>.</p>
+
+        <div class="verify">
+          <h3>Verify Installation</h3>
+          <div class="code-block">
+            <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+            <pre>ant --version
+antnode --version
+antctl --version</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Node Launchpad <span class="recommended">Recommended</span></h2>
+        <p>A TUI application for managing Autonomi nodes. Download the DMG and drag to Applications.</p>
+
+        <h3>Download</h3>
+        <div class="download-grid">
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.node-launchpad.aarch64-apple-darwin.dmg" class="download-link">
+            <span class="arch">Apple Silicon</span>
+            <span class="ext">.dmg</span>
+          </a>
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.node-launchpad.x86_64-apple-darwin.dmg" class="download-link">
+            <span class="arch">Intel</span>
+            <span class="ext">.dmg</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Windows Panel -->
+    <div class="os-panel" id="panel-windows">
+      <div class="section">
+        <h2>CLI Suite</h2>
+        <p>Install <code>ant</code>, <code>antnode</code>, and <code>antctl</code> using the signed MSI installer.</p>
+
+        <h3>Download</h3>
+        <div class="download-grid">
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.x86_64-pc-windows-msvc.msi" class="download-link">
+            <span class="arch">x86_64</span>
+            <span class="ext">.msi</span>
+          </a>
+        </div>
+
+        <p>Double-click the downloaded file and follow the installation prompts. The binaries will be installed to <code>C:\Program Files\Autonomi\</code> and added to your PATH.</p>
+
+        <div class="verify">
+          <h3>Verify Installation</h3>
+          <p>Open a new Command Prompt or PowerShell:</p>
+          <div class="code-block">
+            <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+            <pre>ant --version
+antnode --version
+antctl --version</pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <h2>Node Launchpad</h2>
+        <p>A TUI application for managing Autonomi nodes.</p>
+
+        <h3>Option 1: Direct Install</h3>
+        <div class="download-grid">
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.node-launchpad.x86_64-pc-windows-msvc.msix" class="download-link">
+            <span class="arch">x86_64</span>
+            <span class="ext">.msix</span>
+          </a>
+        </div>
+        <p>Double-click the downloaded file to install. The app will appear in your Start Menu.</p>
+
+        <hr class="section-divider">
+
+        <h3>Option 2: Install with Auto-Updates <span class="recommended">Recommended</span></h3>
+        <div class="download-grid">
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.node-launchpad.x86_64-pc-windows-msvc.appinstaller" class="download-link">
+            <span class="arch">x86_64</span>
+            <span class="ext">.appinstaller</span>
+          </a>
+        </div>
+        <p>Double-click the .appinstaller file. This will install the app and enable automatic updates. When a new version is released, you'll be prompted to update on app launch.</p>
+      </div>
+    </div>
+
+    <!-- Linux Panel -->
+    <div class="os-panel" id="panel-linux">
+      <div class="section">
+        <h2>CLI Suite</h2>
+        <p>Install <code>ant</code>, <code>antnode</code>, and <code>antctl</code>. Choose the method that best fits your distribution.</p>
+
+        <h3>Via APT Repository <span class="recommended">Recommended for Debian/Ubuntu</span></h3>
+        <p>The easiest way to install and keep the Autonomi CLI suite up to date.</p>
+
+        <div class="steps">
+          <div class="step">
+            <p>Set up the repository (one-time):</p>
+            <div class="code-block">
+              <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+              <pre><span class="comment"># Import the signing key</span>
+curl -fsSL https://{{APT_REPO_DOMAIN}}/autonomi-signing-key.asc \
+  | sudo gpg --dearmor -o /usr/share/keyrings/autonomi-archive-keyring.gpg
+
+<span class="comment"># Add the repository</span>
+echo 'deb [signed-by=/usr/share/keyrings/autonomi-archive-keyring.gpg] https://{{APT_REPO_DOMAIN}} stable main' \
+  | sudo tee /etc/apt/sources.list.d/autonomi.list</pre>
+            </div>
+          </div>
+          <div class="step">
+            <p>Install:</p>
+            <div class="code-block">
+              <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+              <pre>sudo apt-get update
+sudo apt-get install autonomi</pre>
+            </div>
+          </div>
+          <div class="step">
+            <p>Update to latest version:</p>
+            <div class="code-block">
+              <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+              <pre>sudo apt-get update && sudo apt-get upgrade autonomi</pre>
+            </div>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3>Via YUM/DNF Repository <span class="recommended">Recommended for Fedora/RHEL/CentOS</span></h3>
+        <p>The easiest way to install and keep the Autonomi CLI suite up to date on RPM-based distributions.</p>
+
+        <div class="steps">
+          <div class="step">
+            <p>Set up the repository (one-time):</p>
+            <div class="code-block">
+              <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+              <pre><span class="comment"># Import the signing key</span>
+sudo rpm --import https://{{YUM_REPO_DOMAIN}}/autonomi-signing-key.asc
+
+<span class="comment"># Add the repository</span>
+sudo tee /etc/yum.repos.d/autonomi.repo &lt;&lt;EOF
+[autonomi]
+name=Autonomi Network CLI Suite
+baseurl=https://{{YUM_REPO_DOMAIN}}
+enabled=1
+gpgcheck=1
+gpgkey=https://{{YUM_REPO_DOMAIN}}/autonomi-signing-key.asc
+EOF</pre>
+            </div>
+          </div>
+          <div class="step">
+            <p>Install:</p>
+            <div class="code-block">
+              <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+              <pre>sudo dnf install autonomi</pre>
+            </div>
+          </div>
+          <div class="step">
+            <p>Update to latest version:</p>
+            <div class="code-block">
+              <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+              <pre>sudo dnf upgrade autonomi</pre>
+            </div>
+          </div>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3>Via DEB Package (Manual)</h3>
+        <div class="download-grid">
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.x86_64-unknown-linux-musl.deb" class="download-link">
+            <span class="arch">x86_64 (AMD64)</span>
+            <span class="ext">.deb</span>
+          </a>
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.aarch64-unknown-linux-musl.deb" class="download-link">
+            <span class="arch">ARM64 (aarch64)</span>
+            <span class="ext">.deb</span>
+          </a>
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.armv7-unknown-linux-musleabihf.deb" class="download-link">
+            <span class="arch">ARMv7 (armhf)</span>
+            <span class="ext">.deb</span>
+          </a>
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.arm-unknown-linux-musleabi.deb" class="download-link">
+            <span class="arch">ARM (armel)</span>
+            <span class="ext">.deb</span>
+          </a>
+        </div>
+
+        <div class="code-block">
+          <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+          <pre><span class="comment"># Import and trust the GPG signing key (first time only)</span>
+curl -fsSL https://raw.githubusercontent.com/maidsafe/autonomi/main/resources/keys/autonomi-signing-key.asc \
+  -o /tmp/autonomi-signing-key.asc
+gpg --import /tmp/autonomi-signing-key.asc
+echo 'D39ABED4DC364A8D0812F539C19B57B73D6EA0AB:6:' | gpg --import-ownertrust
+
+<span class="comment"># Verify the signature</span>
+gpg --verify {{VERSION}}.autonomi.x86_64-unknown-linux-musl.deb.asc \
+  {{VERSION}}.autonomi.x86_64-unknown-linux-musl.deb
+
+<span class="comment"># Install the package</span>
+sudo dpkg -i {{VERSION}}.autonomi.x86_64-unknown-linux-musl.deb</pre>
+        </div>
+
+        <hr class="section-divider">
+
+        <h3>Via RPM Package (Manual)</h3>
+        <div class="download-grid">
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.x86_64-unknown-linux-musl.rpm" class="download-link">
+            <span class="arch">x86_64</span>
+            <span class="ext">.rpm</span>
+          </a>
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.aarch64-unknown-linux-musl.rpm" class="download-link">
+            <span class="arch">ARM64 (aarch64)</span>
+            <span class="ext">.rpm</span>
+          </a>
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.armv7-unknown-linux-musleabihf.rpm" class="download-link">
+            <span class="arch">ARMv7</span>
+            <span class="ext">.rpm</span>
+          </a>
+          <a href="{{DOWNLOAD_URL}}/{{VERSION}}.autonomi.arm-unknown-linux-musleabi.rpm" class="download-link">
+            <span class="arch">ARM</span>
+            <span class="ext">.rpm</span>
+          </a>
+        </div>
+
+        <div class="code-block">
+          <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+          <pre><span class="comment"># Import the GPG signing key (first time only)</span>
+curl -fsSL https://github.com/maidsafe/autonomi/raw/main/resources/keys/autonomi-signing-key.asc \
+  | gpg --import
+
+<span class="comment"># Verify the signature (optional)</span>
+gpg --verify {{VERSION}}.autonomi.x86_64-unknown-linux-musl.rpm.asc \
+  {{VERSION}}.autonomi.x86_64-unknown-linux-musl.rpm
+
+<span class="comment"># Install the package</span>
+sudo rpm -i {{VERSION}}.autonomi.x86_64-unknown-linux-musl.rpm
+
+<span class="comment"># Or using dnf:</span>
+sudo dnf install ./{{VERSION}}.autonomi.x86_64-unknown-linux-musl.rpm</pre>
+        </div>
+
+        <div class="verify">
+          <h3>Verify Installation</h3>
+          <div class="code-block">
+            <button class="copy-btn" aria-label="Copy to clipboard"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+            <pre>ant --version
+antnode --version
+antctl --version</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>
+      <a href="https://autonomi.com">autonomi.com</a> &middot;
+      <a href="https://docs.autonomi.com">Documentation</a> &middot;
+      <a href="https://github.com/maidsafe/autonomi">GitHub</a>
+    </p>
+    <p style="margin-top: 0.5rem;">{{VERSION}}</p>
+  </footer>
+
+  <script>
+    // Tab switching
+    document.querySelectorAll('.os-tab').forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        document.querySelectorAll('.os-tab').forEach(function(t) {
+          t.classList.remove('active');
+          t.setAttribute('aria-selected', 'false');
+        });
+        document.querySelectorAll('.os-panel').forEach(function(p) {
+          p.classList.remove('active');
+        });
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+      });
+    });
+
+    // Auto-detect OS
+    (function() {
+      var ua = navigator.userAgent.toLowerCase();
+      var os = 'linux';
+      if (ua.indexOf('mac') !== -1) os = 'macos';
+      else if (ua.indexOf('win') !== -1) os = 'windows';
+      var tab = document.querySelector('[data-tab="' + os + '"]');
+      if (tab) tab.click();
+    })();
+
+    // Copy to clipboard
+    document.querySelectorAll('.copy-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var pre = btn.parentElement.querySelector('pre');
+        var text = pre.textContent;
+        navigator.clipboard.writeText(text).then(function() {
+          btn.classList.add('copied');
+          btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>';
+          setTimeout(function() {
+            btn.classList.remove('copied');
+            btn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>';
+          }, 2000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
