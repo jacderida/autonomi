@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1770424966608,
+  "lastUpdate": 1770659932319,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -1403,6 +1403,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 6.5390627148031015,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "94ca46c87fe8b03e918ed26fc9f16f3f9ca9ef4a",
+          "message": "Merge pull request #3452 from jacderida/fix-launchpad_ui_not_updating\n\nfix(node-launchpad): update UI in real-time when node status transitions",
+          "timestamp": "2026-02-09T17:42:21Z",
+          "tree_id": "c2fa065fdd26561495bf9f27e728d54335564a0e",
+          "url": "https://github.com/jacderida/autonomi/commit/94ca46c87fe8b03e918ed26fc9f16f3f9ca9ef4a"
+        },
+        "date": 1770659931708,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 1.0056651143816824,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 5.61962029606344,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 6.577669206560919,
             "unit": "MiB/s"
           }
         ]
