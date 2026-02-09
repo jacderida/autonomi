@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1770660053195,
+  "lastUpdate": 1770660054452,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -5178,6 +5178,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "swarm_driver long handling total_time",
             "value": 29111,
+            "unit": "ms"
+          },
+          {
+            "name": "swarm_driver average long handling time",
+            "value": 2,
+            "unit": "ms"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "94ca46c87fe8b03e918ed26fc9f16f3f9ca9ef4a",
+          "message": "Merge pull request #3452 from jacderida/fix-launchpad_ui_not_updating\n\nfix(node-launchpad): update UI in real-time when node status transitions",
+          "timestamp": "2026-02-09T17:42:21Z",
+          "tree_id": "c2fa065fdd26561495bf9f27e728d54335564a0e",
+          "url": "https://github.com/jacderida/autonomi/commit/94ca46c87fe8b03e918ed26fc9f16f3f9ca9ef4a"
+        },
+        "date": 1770660054146,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "swarm_driver long handling times",
+            "value": 12367,
+            "unit": "hits"
+          },
+          {
+            "name": "swarm_driver long handling total_time",
+            "value": 27363,
             "unit": "ms"
           },
           {
