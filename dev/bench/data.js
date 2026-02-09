@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1770660051946,
+  "lastUpdate": 1770660053195,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -3733,6 +3733,40 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/jacderida/autonomi/commit/8d04c696919f41889a1c79047275335b9df12f4d"
         },
         "date": 1770424965147,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory usage w/ upload",
+            "value": 15,
+            "unit": "MB"
+          },
+          {
+            "name": "Average memory usage w/ upload",
+            "value": 14,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "94ca46c87fe8b03e918ed26fc9f16f3f9ca9ef4a",
+          "message": "Merge pull request #3452 from jacderida/fix-launchpad_ui_not_updating\n\nfix(node-launchpad): update UI in real-time when node status transitions",
+          "timestamp": "2026-02-09T17:42:21Z",
+          "tree_id": "c2fa065fdd26561495bf9f27e728d54335564a0e",
+          "url": "https://github.com/jacderida/autonomi/commit/94ca46c87fe8b03e918ed26fc9f16f3f9ca9ef4a"
+        },
+        "date": 1770660052886,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
