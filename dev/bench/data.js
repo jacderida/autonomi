@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1770762523782,
+  "lastUpdate": 1770835024270,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -1481,6 +1481,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 6.588896425041827,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "qi.ma@maidsafe.net",
+            "name": "maqi",
+            "username": "maqi"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "b9d25dec18b97be7c8d5e6df1dca7a054a039900",
+          "message": "Merge pull request #3458 from maqi/avoid_lack_of_candidates_during_merkle_pay\n\nfeat(client): avoid lack of candidates during merkle pay with KAD fallbacks",
+          "timestamp": "2026-02-11T12:38:06Z",
+          "tree_id": "e51564d7bb6bdebf1bd1d490326d2ca8f699c56f",
+          "url": "https://github.com/jacderida/autonomi/commit/b9d25dec18b97be7c8d5e6df1dca7a054a039900"
+        },
+        "date": 1770835023617,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 1.0375817577603934,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 5.490155142628947,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 6.569859965336495,
             "unit": "MiB/s"
           }
         ]
