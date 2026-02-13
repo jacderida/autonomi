@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1771012639191,
+  "lastUpdate": 1771012924894,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -2692,6 +2692,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Peak memory w/ `safe` benchmarks",
             "value": 171,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "e9b87b36a40a2382fc34ab617de6f14d8b7fbfec",
+          "message": "Merge pull request #3465 from maidsafe/rc-2026.2.2\n\nchore(release): stable release 2026.2.2.1",
+          "timestamp": "2026-02-12T21:31:16Z",
+          "tree_id": "422136804deb6ad201018f69ec1b27ce8a299373",
+          "url": "https://github.com/jacderida/autonomi/commit/e9b87b36a40a2382fc34ab617de6f14d8b7fbfec"
+        },
+        "date": 1771012924219,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory w/ `safe` benchmarks",
+            "value": 199,
             "unit": "MB"
           }
         ]
