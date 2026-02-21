@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1771682570914,
+  "lastUpdate": 1771682852332,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -2828,6 +2828,35 @@ window.BENCHMARK_DATA = {
           {
             "name": "Peak memory w/ `safe` benchmarks",
             "value": 205,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ea57c0b85707f24aed6fab09b58a7a1c654bc158",
+          "message": "Merge pull request #3471 from jacderida/rc-2026.2.3\n\nchore(release): stable release 2026.2.3.2",
+          "timestamp": "2026-02-19T21:29:52Z",
+          "tree_id": "3483075928765614a9179bbeaf1d349dd34eb6e8",
+          "url": "https://github.com/jacderida/autonomi/commit/ea57c0b85707f24aed6fab09b58a7a1c654bc158"
+        },
+        "date": 1771682851699,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory w/ `safe` benchmarks",
+            "value": 200,
             "unit": "MB"
           }
         ]
