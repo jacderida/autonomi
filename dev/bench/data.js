@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1771345503866,
+  "lastUpdate": 1771682570914,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -1598,6 +1598,45 @@ window.BENCHMARK_DATA = {
           {
             "name": "ant files download",
             "value": 6.556676544583839,
+            "unit": "MiB/s"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ea57c0b85707f24aed6fab09b58a7a1c654bc158",
+          "message": "Merge pull request #3471 from jacderida/rc-2026.2.3\n\nchore(release): stable release 2026.2.3.2",
+          "timestamp": "2026-02-19T21:29:52Z",
+          "tree_id": "3483075928765614a9179bbeaf1d349dd34eb6e8",
+          "url": "https://github.com/jacderida/autonomi/commit/ea57c0b85707f24aed6fab09b58a7a1c654bc158"
+        },
+        "date": 1771682569523,
+        "tool": "customBiggerIsBetter",
+        "benches": [
+          {
+            "name": "ant files upload 1mb",
+            "value": 0.955101446285168,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files upload 10mb",
+            "value": 5.486134047624153,
+            "unit": "MiB/s"
+          },
+          {
+            "name": "ant files download",
+            "value": 6.613219193864943,
             "unit": "MiB/s"
           }
         ]
