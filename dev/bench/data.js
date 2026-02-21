@@ -1,5 +1,5 @@
 window.BENCHMARK_DATA = {
-  "lastUpdate": 1771682852332,
+  "lastUpdate": 1771682854099,
   "repoUrl": "https://github.com/jacderida/autonomi",
   "entries": {
     "`safe files` benchmarks": [
@@ -4243,6 +4243,40 @@ window.BENCHMARK_DATA = {
           "url": "https://github.com/jacderida/autonomi/commit/92fc410518d465815066b005eb4fc2212dd65c5e"
         },
         "date": 1771345501812,
+        "tool": "customSmallerIsBetter",
+        "benches": [
+          {
+            "name": "Peak memory usage w/ upload",
+            "value": 15,
+            "unit": "MB"
+          },
+          {
+            "name": "Average memory usage w/ upload",
+            "value": 14,
+            "unit": "MB"
+          }
+        ]
+      },
+      {
+        "commit": {
+          "author": {
+            "email": "chriso83@protonmail.com",
+            "name": "Chris O'Neil",
+            "username": "jacderida"
+          },
+          "committer": {
+            "email": "noreply@github.com",
+            "name": "GitHub",
+            "username": "web-flow"
+          },
+          "distinct": true,
+          "id": "ea57c0b85707f24aed6fab09b58a7a1c654bc158",
+          "message": "Merge pull request #3471 from jacderida/rc-2026.2.3\n\nchore(release): stable release 2026.2.3.2",
+          "timestamp": "2026-02-19T21:29:52Z",
+          "tree_id": "3483075928765614a9179bbeaf1d349dd34eb6e8",
+          "url": "https://github.com/jacderida/autonomi/commit/ea57c0b85707f24aed6fab09b58a7a1c654bc158"
+        },
+        "date": 1771682853423,
         "tool": "customSmallerIsBetter",
         "benches": [
           {
